@@ -1,10 +1,10 @@
 package cn.peyriat.betternaven.features.Modules;
+
 import cn.peyriat.betternaven.features.Module;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 import java.awt.event.KeyEvent;
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 

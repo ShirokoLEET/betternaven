@@ -17,9 +17,12 @@ plugins {
 
 apply plugin: 'org.spongepowered.mixin'
 
+
 group = mod_group_id
 version = mod_version
-
+configurations {
+    implementation.extendsFrom shadow
+}
 base {
     archivesName = mod_id
 }
@@ -121,6 +124,7 @@ minecraft {
     }
 }
 
+
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
 
@@ -158,13 +162,18 @@ dependencies {
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
-    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+    // imentation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+
+
+
+
 
 }
 
@@ -201,6 +210,8 @@ tasks.named('jar', Jar).configure {
     // This is the preferred method to reobfuscate your jar file
     finalizedBy 'reobfJar'
 }
+
+
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation

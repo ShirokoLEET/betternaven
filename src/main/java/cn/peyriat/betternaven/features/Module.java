@@ -1,11 +1,7 @@
 package cn.peyriat.betternaven.features;
 
-import cn.peyriat.betternaven.Betternaven;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import cn.peyriat.betternaven.features.helper.ConfigHelper;
 import com.mojang.blaze3d.vertex.PoseStack;
-
-import java.nio.file.Files;
 
 
 public class Module {
@@ -37,20 +33,13 @@ public class Module {
 
     public void set(boolean enabled) throws Exception {
         this.enabled = enabled;
-        JsonObject json = JsonParser.parseString(Files.readString(Betternaven.file.toPath())).getAsJsonObject();
         if(enabled){
             enabled();
-            json.add(this.name,null);
+            ConfigHelper.setConfig(this.name,true);
         }
         else{
             disabled();
-            try {
-                json.remove(this.name);
-            }
-            catch (Exception e){
-                Betternaven.LOGGER.error("Failed to remove the module enabled in the config file: "+this.name);
+            ConfigHelper.setConfig(this.name,false);
             }
         }
-        Files.writeString(Betternaven.file.toPath(),json.toString());
     }
-}

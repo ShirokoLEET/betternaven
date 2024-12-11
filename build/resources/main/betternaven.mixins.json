@@ -1,11 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "cn.peyriat.betternaven.features.Mixins",
-  "compatibilityLevel": "JAVA_8",
+  "package": "cn.peyriat.betternaven.features.mixins",
+  "compatibilityLevel": "JAVA_17",
   "refmap": "betternaven.refmap.json",
   "mixins": [
-    "MixinBlock"
   ],
   "client": [
   ],

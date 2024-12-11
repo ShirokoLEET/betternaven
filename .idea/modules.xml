@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BetterNaven.betternaven.test.iml" filepath="$PROJECT_DIR$/.idea/modules/BetterNaven.betternaven.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/betternaven.main.iml" filepath="$PROJECT_DIR$/.idea/modules/betternaven.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/betternaven.test.iml" filepath="$PROJECT_DIR$/.idea/modules/betternaven.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.peyriat.betternaven.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.peyriat.betternaven.test.iml" />
     </modules>
   </component>
 </project>

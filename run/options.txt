@@ -1,5 +1,5 @@
 version:2865
-autoJump:true
+autoJump:false
 autoSuggestions:true
 chatColors:true
 chatLinks:true
@@ -16,7 +16,7 @@ touchscreen:false
 fullscreen:false
 bobView:true
 toggleCrouch:false
-toggleSprint:false
+toggleSprint:true
 darkMojangStudiosBackground:false
 hideLightningFlashes:false
 mouseSensitivity:0.5
@@ -35,7 +35,7 @@ graphicsMode:0
 ao:2
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
-renderClouds:true
+renderClouds:false
 resourcePacks:[]
 incompatibleResourcePacks:[]
 lastServer:
@@ -68,7 +68,7 @@ rawMouseInput:true
 glDebugVerbosity:1
 skipMultiplayerWarning:true
 hideMatchedNames:true
-joinedFirstServer:false
+joinedFirstServer:true
 hideBundleTutorial:false
 syncChunkWrites:true
 showAutosaveIndicator:true

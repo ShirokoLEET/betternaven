@@ -1,9 +1,8 @@
 package cn.peyriat.betternaven;
 import cn.peyriat.betternaven.features.ModuleManager;
 import cn.peyriat.betternaven.features.Module;
-
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import cn.peyriat.betternaven.features.helper.ConfigHelper;
+import cn.peyriat.betternaven.features.helper.KeyBindHelper;
 import com.sun.jna.platform.KeyboardUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -19,40 +18,24 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("betternaven")
 @Mod.EventBusSubscriber
+
 public class Betternaven {
     public static Logger LOGGER = LogManager.getLogger();
-    public static File file = new File("config/better_naven.json");
-    public Betternaven() throws IllegalAccessException, IOException {
+    public static File file = new File("better_naven.json");
+    public Betternaven() throws Exception {
+
         MinecraftForge.EVENT_BUS.register(this);
         ModuleManager.getModules();
-        init();
+        ConfigHelper.init();
+        KeyBindHelper.init();
 
     }
-    public void init() throws IOException{
-        if(!file.exists()){
-            Files.write(file.toPath(),"{}".getBytes());
-        }
-        JsonObject json = JsonParser.parseString(Files.readString(file.toPath())).getAsJsonObject();
-        if(ModuleManager.modules!=null){
-            for(String name:json.keySet()){
-                ModuleManager.modules.stream().filter(module -> module.name.equals(name)).forEach(module -> {
-                    module.enabled = true;
-                });
-            }
-        }
 
-        if(Boolean.parseBoolean(System.getProperty("java.awt.headless"))){
-            System.setProperty("java.awt.headless","false");
-        }
 
-        LOGGER.info("ExampleMod is done.");
-    }
 
 
     @SubscribeEvent
