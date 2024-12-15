@@ -3,7 +3,6 @@ package cn.peyriat.betternaven.features.helper;
 import cn.peyriat.betternaven.features.Module;
 import cn.peyriat.betternaven.features.ModuleManager;
 import com.mojang.blaze3d.platform.InputConstants;
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.ClientRegistry;

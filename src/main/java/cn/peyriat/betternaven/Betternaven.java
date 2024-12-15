@@ -3,8 +3,6 @@ import cn.peyriat.betternaven.features.ModuleManager;
 import cn.peyriat.betternaven.features.Module;
 import cn.peyriat.betternaven.features.helper.ConfigHelper;
 import cn.peyriat.betternaven.features.helper.KeyboardManager;
-import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.InputEvent;
@@ -60,7 +58,7 @@ public class Betternaven {
     }
 
     @SubscribeEvent
-    public void keyInputEvent(InputEvent.KeyInputEvent event) throws Exception {
+    public void keyInputEvent(InputEvent.KeyInputEvent event) {
 
     }
 
