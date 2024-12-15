@@ -5,7 +5,7 @@ Time: 2024/11/7 下午9:35
 Description: Ticking player
 
 java.lang.NullPointerException: Cannot invoke "net.minecraft.client.player.LocalPlayer.isSprinting()" because "MC.player" is null
-	at cn.peyriat.betternaven.features.Modules.Keepsprint.update(Keepsprint.java:25) ~[%2381!/:?] {re:classloading}
+	at cn.peyriat.betternaven.features.functions.Keepsprint.update(Keepsprint.java:25) ~[%2381!/:?] {re:classloading}
 	at cn.peyriat.betternaven.Betternaven.PlayerTick(Betternaven.java:62) ~[%2381!/:?] {re:classloading}
 	at net.minecraftforge.eventbus.ASMEventHandler_0_Betternaven_PlayerTick_PlayerTickEvent.invoke(.dynamic) ~[?:?] {}
 	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.7.jar%239!/:?] {}
@@ -31,7 +31,7 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Head --
 Thread: Server thread
 Stacktrace:
-	at cn.peyriat.betternaven.features.Modules.Keepsprint.update(Keepsprint.java:25) ~[%2381!/:?] {re:classloading}
+	at cn.peyriat.betternaven.features.functions.Keepsprint.update(Keepsprint.java:25) ~[%2381!/:?] {re:classloading}
 	at cn.peyriat.betternaven.Betternaven.PlayerTick(Betternaven.java:62) ~[%2381!/:?] {re:classloading}
 	at net.minecraftforge.eventbus.ASMEventHandler_0_Betternaven_PlayerTick_PlayerTickEvent.invoke(.dynamic) ~[?:?] {}
 	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.7.jar%239!/:?] {}

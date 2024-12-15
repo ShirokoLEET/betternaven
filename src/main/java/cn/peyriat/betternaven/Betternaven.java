@@ -2,8 +2,7 @@ package cn.peyriat.betternaven;
 import cn.peyriat.betternaven.features.ModuleManager;
 import cn.peyriat.betternaven.features.Module;
 import cn.peyriat.betternaven.features.helper.ConfigHelper;
-import cn.peyriat.betternaven.features.helper.KeyBindHelper;
-import com.sun.jna.platform.KeyboardUtils;
+import cn.peyriat.betternaven.features.helper.KeyboardManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
@@ -24,6 +23,7 @@ import java.io.File;
 @Mod.EventBusSubscriber
 
 public class Betternaven {
+    public static final Object MOD_ID = "Betternaven";
     public static Logger LOGGER = LogManager.getLogger();
     public static File file = new File("better_naven.json");
     public Betternaven() throws Exception {
@@ -31,7 +31,7 @@ public class Betternaven {
         MinecraftForge.EVENT_BUS.register(this);
         ModuleManager.getModules();
         ConfigHelper.init();
-        KeyBindHelper.init();
+        KeyboardManager.init();
 
     }
 
@@ -41,9 +41,11 @@ public class Betternaven {
     @SubscribeEvent
     public void PlayerTick(TickEvent.PlayerTickEvent event) throws Exception {
         if(ModuleManager.modules!=null){
-            for(Module module: ModuleManager.modules.stream().filter(module -> module.enabled).toList()){
+            for(Module module: ModuleManager.modules.stream().filter(module -> module.isEnabled).toList()){
                 module.update();
             }
+        }else {
+            LOGGER.error("Modules is null");
         }
     }
 
@@ -51,7 +53,7 @@ public class Betternaven {
     @OnlyIn(Dist.CLIENT)
     public void RenderTick(RenderGameOverlayEvent.Pre event) throws Exception {
         if(event.getType()==RenderGameOverlayEvent.ElementType.ALL && ModuleManager.modules!=null){
-            for(Module module: ModuleManager.modules.stream().filter(module -> module.enabled).toList()){
+            for(Module module: ModuleManager.modules.stream().filter(module -> module.isEnabled).toList()){
                 module.render(event.getMatrixStack());
             }
         }
@@ -59,25 +61,7 @@ public class Betternaven {
 
     @SubscribeEvent
     public void keyInputEvent(InputEvent.KeyInputEvent event) throws Exception {
-        if(ModuleManager.modules!=null){
-            for(Module module : ModuleManager.modules){
-                if(module.key!=-1){
 
-                    int key = event.getKey();
-
-                    if(module.enabled){
-                        module.keyInput(key);
-                    }
-
-                    if(KeyboardUtils.isPressed(module.key)){
-                        module.set(!module.enabled);
-                        if (Minecraft.getInstance().player != null) {
-                            Minecraft.getInstance().player.sendMessage(Component.nullToEmpty(module.name+": "+module.enabled),Minecraft.getInstance().player.getUUID());
-                        }
-                    }
-                }
-            }
-        }
     }
 
 

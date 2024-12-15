@@ -9,7 +9,7 @@ java.util.UnknownFormatConversionException: Conversion = '.'
 	at java.util.Formatter.format(Formatter.java:2671) ~[?:?] {}
 	at java.util.Formatter.format(Formatter.java:2625) ~[?:?] {}
 	at java.lang.String.format(String.java:4145) ~[?:?] {}
-	at cn.peyriat.betternaven.features.Modules.Keepsprint.update(Keepsprint.java:28) ~[%2381!/:?] {re:classloading}
+	at cn.peyriat.betternaven.features.functions.Keepsprint.update(Keepsprint.java:28) ~[%2381!/:?] {re:classloading}
 	at cn.peyriat.betternaven.Betternaven.PlayerTick(Betternaven.java:62) ~[%2381!/:?] {re:classloading}
 	at net.minecraftforge.eventbus.ASMEventHandler_0_Betternaven_PlayerTick_PlayerTickEvent.invoke(.dynamic) ~[?:?] {}
 	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.7.jar%239!/:?] {}
@@ -39,7 +39,7 @@ Stacktrace:
 	at java.util.Formatter.format(Formatter.java:2671) ~[?:?] {}
 	at java.util.Formatter.format(Formatter.java:2625) ~[?:?] {}
 	at java.lang.String.format(String.java:4145) ~[?:?] {}
-	at cn.peyriat.betternaven.features.Modules.Keepsprint.update(Keepsprint.java:28) ~[%2381!/:?] {re:classloading}
+	at cn.peyriat.betternaven.features.functions.Keepsprint.update(Keepsprint.java:28) ~[%2381!/:?] {re:classloading}
 	at cn.peyriat.betternaven.Betternaven.PlayerTick(Betternaven.java:62) ~[%2381!/:?] {re:classloading}
 	at net.minecraftforge.eventbus.ASMEventHandler_0_Betternaven_PlayerTick_PlayerTickEvent.invoke(.dynamic) ~[?:?] {}
 	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.7.jar%239!/:?] {}

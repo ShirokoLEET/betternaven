@@ -9,7 +9,7 @@ java.lang.IllegalArgumentException: Modifier is already applied on this attribut
 	at net.minecraft.world.entity.ai.attributes.AttributeInstance.addTransientModifier(AttributeInstance.java:80) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading}
 	at net.minecraft.world.entity.LivingEntity.setSprinting(LivingEntity.java:1912) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading}
 	at net.minecraft.client.player.LocalPlayer.setSprinting(LocalPlayer.java:438) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
-	at cn.peyriat.betternaven.features.Modules.Keepsprint.update(Keepsprint.java:33) ~[%2381!/:?] {re:classloading}
+	at cn.peyriat.betternaven.features.functions.Keepsprint.update(Keepsprint.java:33) ~[%2381!/:?] {re:classloading}
 	at cn.peyriat.betternaven.Betternaven.PlayerTick(Betternaven.java:62) ~[%2381!/:?] {re:classloading}
 	at net.minecraftforge.eventbus.ASMEventHandler_2_Betternaven_PlayerTick_PlayerTickEvent.invoke(.dynamic) ~[?:?] {}
 	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.7.jar%239!/:?] {}
@@ -52,7 +52,7 @@ Stacktrace:
 	at net.minecraft.world.entity.ai.attributes.AttributeInstance.addTransientModifier(AttributeInstance.java:80) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading}
 	at net.minecraft.world.entity.LivingEntity.setSprinting(LivingEntity.java:1912) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading}
 	at net.minecraft.client.player.LocalPlayer.setSprinting(LocalPlayer.java:438) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
-	at cn.peyriat.betternaven.features.Modules.Keepsprint.update(Keepsprint.java:33) ~[%2381!/:?] {re:classloading}
+	at cn.peyriat.betternaven.features.functions.Keepsprint.update(Keepsprint.java:33) ~[%2381!/:?] {re:classloading}
 	at cn.peyriat.betternaven.Betternaven.PlayerTick(Betternaven.java:62) ~[%2381!/:?] {re:classloading}
 	at net.minecraftforge.eventbus.ASMEventHandler_2_Betternaven_PlayerTick_PlayerTickEvent.invoke(.dynamic) ~[?:?] {}
 	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.7.jar%239!/:?] {}
