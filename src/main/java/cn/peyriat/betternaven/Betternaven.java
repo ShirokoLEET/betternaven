@@ -2,7 +2,7 @@ package cn.peyriat.betternaven;
 import cn.peyriat.betternaven.features.ModuleManager;
 import cn.peyriat.betternaven.features.Module;
 import cn.peyriat.betternaven.features.helper.ConfigHelper;
-import cn.peyriat.betternaven.features.helper.KeyboardManager;
+import cn.peyriat.betternaven.features.helper.KeyboardHelper;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.InputEvent;
@@ -29,7 +29,7 @@ public class Betternaven {
         MinecraftForge.EVENT_BUS.register(this);
         ModuleManager.getModules();
         ConfigHelper.init();
-        KeyboardManager.init();
+        KeyboardHelper.init();
 
     }
 
@@ -42,8 +42,6 @@ public class Betternaven {
             for(Module module: ModuleManager.modules.stream().filter(module -> module.isEnabled).toList()){
                 module.update();
             }
-        }else {
-            LOGGER.error("Modules is null");
         }
     }
 

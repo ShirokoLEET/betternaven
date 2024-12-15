@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Mod.EventBusSubscriber
-public class KeyboardManager {
+public class KeyboardHelper {
     public static final List<KeyMapping> KEY_BINDINGS = new ArrayList<>();
 
     static {
