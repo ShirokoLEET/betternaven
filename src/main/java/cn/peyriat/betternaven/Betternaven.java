@@ -1,6 +1,8 @@
 package cn.peyriat.betternaven;
 import cn.peyriat.betternaven.features.ModuleManager;
 import cn.peyriat.betternaven.features.Module;
+import cn.peyriat.betternaven.features.functions.Xray;
+import cn.peyriat.betternaven.features.functions.xray.XrayJsonStore;
 import cn.peyriat.betternaven.features.helper.ConfigHelper;
 import cn.peyriat.betternaven.features.helper.KeyboardHelper;
 import net.minecraftforge.api.distmarker.Dist;
@@ -8,6 +10,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.fml.DistExecutor;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,7 +24,7 @@ import java.io.File;
 @Mod.EventBusSubscriber
 
 public class Betternaven {
-    public static final Object MOD_ID = "Betternaven";
+    public static final String MOD_ID = "Betternaven";
     public static Logger LOGGER = LogManager.getLogger();
     public static File file = new File("better_naven.json");
     public Betternaven() throws Exception {
@@ -30,6 +33,7 @@ public class Betternaven {
         ModuleManager.getModules();
         ConfigHelper.init();
         KeyboardHelper.init();
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> Xray::setup);
 
     }
 

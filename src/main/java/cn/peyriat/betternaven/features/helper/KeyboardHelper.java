@@ -2,6 +2,11 @@ package cn.peyriat.betternaven.features.helper;
 
 import cn.peyriat.betternaven.features.Module;
 import cn.peyriat.betternaven.features.ModuleManager;
+import cn.peyriat.betternaven.features.functions.Xray;
+import cn.peyriat.betternaven.features.functions.xray.XrayBlockStore;
+import cn.peyriat.betternaven.features.functions.xray.XrayConfig;
+import cn.peyriat.betternaven.features.functions.xray.XrayController;
+import cn.peyriat.betternaven.features.functions.xray.XrayJsonStore;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -41,7 +46,6 @@ public class KeyboardHelper {
     public static void onKeyPressed(InputEvent.KeyInputEvent event) throws Exception {
         for (KeyMapping keyMapping : KEY_BINDINGS) {
             if (keyMapping.consumeClick()) {
-
                 switch (keyMapping.getName()) {
                     case "Keepsprint":
                         ModuleManager.modulesClass.Keepsprint.toggle();
@@ -49,8 +53,11 @@ public class KeyboardHelper {
                     case "HUD":
                         ModuleManager.modulesClass.HUD.toggle();
                         break;
-                    case "GiftEsp":
-                        ModuleManager.modulesClass.GiftEsp.toggle();
+                    case "Xray":
+
+                        XrayController.toggleXRay();
+                        ModuleManager.modulesClass.XrayController.toggle();
+
                         break;
                 }
             }

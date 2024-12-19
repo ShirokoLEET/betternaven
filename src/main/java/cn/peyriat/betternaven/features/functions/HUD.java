@@ -21,7 +21,7 @@ public class HUD extends Module {
 
             MC.font.draw(matrixStack, "XYZ: " + Math.round(pos.x) + ", " + Math.round(pos.y) + ", " + Math.round(pos.z), 0, 2, Color.WHITE.getRGB());
             MC.font.draw(matrixStack, "Keepsprint: " + (ModuleManager.modulesClass.Keepsprint.isEnabled ? "ON" : "OFF"), 0, 12, ModuleManager.modulesClass.Keepsprint.isEnabled ? Color.GREEN.getRGB() : Color.RED.getRGB());
-            MC.font.drawShadow(matrixStack, "GiftEsp: " + (ModuleManager.modulesClass.GiftEsp.isEnabled ? "ON" : "OFF"), 0, 22, ModuleManager.modulesClass.GiftEsp.isEnabled ? Color.GREEN.getRGB() : Color.RED.getRGB());
+            MC.font.draw(matrixStack, "Xray: " + (ModuleManager.modulesClass.XrayController.isEnabled ? "ON" : "OFF"), 0, 22, ModuleManager.modulesClass.XrayController.isEnabled ? Color.GREEN.getRGB() : Color.RED.getRGB());
         }
     }
 }
