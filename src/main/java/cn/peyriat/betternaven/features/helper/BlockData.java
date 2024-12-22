@@ -2,6 +2,8 @@ package cn.peyriat.betternaven.features.helper;
 
 import net.minecraft.world.item.ItemStack;
 
+import java.awt.*;
+
 public class BlockData {
 
     private String entryName;

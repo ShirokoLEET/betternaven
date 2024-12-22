@@ -2,11 +2,6 @@ package cn.peyriat.betternaven.features.helper;
 
 import cn.peyriat.betternaven.features.Module;
 import cn.peyriat.betternaven.features.ModuleManager;
-import cn.peyriat.betternaven.features.functions.Xray;
-import cn.peyriat.betternaven.features.functions.xray.XrayBlockStore;
-import cn.peyriat.betternaven.features.functions.xray.XrayConfig;
-import cn.peyriat.betternaven.features.functions.xray.XrayController;
-import cn.peyriat.betternaven.features.functions.xray.XrayJsonStore;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -53,12 +48,18 @@ public class KeyboardHelper {
                     case "HUD":
                         ModuleManager.modulesClass.HUD.toggle();
                         break;
-                    case "Xray":
-
-                        XrayController.toggleXRay();
-                        ModuleManager.modulesClass.XrayController.toggle();
-
+                    case "Eagle":
+                        ModuleManager.modulesClass.Eagle.toggle();
                         break;
+                    case "Velocity":
+                        ModuleManager.modulesClass.Velocity.toggle();
+                        break;
+                    case "HealthFix":
+                        ModuleManager.modulesClass.HealthFix.toggle();
+                        break;
+
+
+
                 }
             }
         }

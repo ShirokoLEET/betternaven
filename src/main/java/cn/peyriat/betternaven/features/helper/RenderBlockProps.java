@@ -1,6 +1,5 @@
 package cn.peyriat.betternaven.features.helper;
 
-
 import com.google.common.base.Objects;
 import net.minecraft.core.BlockPos;
 

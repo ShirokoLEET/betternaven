@@ -108,8 +108,10 @@ key_key.hotbar.7:key.keyboard.7
 key_key.hotbar.8:key.keyboard.8
 key_key.hotbar.9:key.keyboard.9
 key_Keepsprint:key.keyboard.k
-key_Xray:key.keyboard.x
 key_HUD:key.keyboard.p
+key_Eagle:key.keyboard.g
+key_Velocity:key.keyboard.v
+key_HealthFix:key.keyboard.h
 soundCategory_master:1.0
 soundCategory_music:0.0
 soundCategory_record:1.0

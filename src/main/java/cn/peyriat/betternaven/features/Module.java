@@ -2,6 +2,7 @@ package cn.peyriat.betternaven.features;
 
 import cn.peyriat.betternaven.features.helper.ConfigHelper;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraftforge.common.MinecraftForge;
 
 public class Module {
 
@@ -15,6 +16,7 @@ public class Module {
     }
 
     public void disabled() throws Exception {
+        MinecraftForge.EVENT_BUS.unregister(this);
     }
 
     public void update() throws Exception {
@@ -27,20 +29,23 @@ public class Module {
     }
 
     public void enabled() throws Exception {
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     public void set(boolean enabled) throws Exception {
         this.isEnabled = enabled;
         if (enabled) {
-            enabled();
             ConfigHelper.setConfig(this.name, true);
+            enabled();
+
         } else {
-            disabled();
             ConfigHelper.setConfig(this.name, false);
+            disabled();
+
         }
     }
 
     public void toggle() throws Exception {
-        set(!isEnabled);
+        this.set(!this.isEnabled);
     }
 }

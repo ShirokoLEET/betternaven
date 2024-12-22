@@ -18,6 +18,7 @@ plugins {
 apply plugin: 'org.spongepowered.mixin'
 
 
+
 group = mod_group_id
 version = mod_version
 configurations {
@@ -169,10 +170,6 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-
-
-
-
 
 
 }
