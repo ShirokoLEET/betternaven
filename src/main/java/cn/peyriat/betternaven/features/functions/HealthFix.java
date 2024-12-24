@@ -10,10 +10,12 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_H;
+
 @Mod.EventBusSubscriber
 public class HealthFix extends Module {
-    public HealthFix(String name, int key) {
-        super(name, key);
+    public HealthFix() {
+        super("HealthFix", GLFW_KEY_H);
     }
 
     @SubscribeEvent

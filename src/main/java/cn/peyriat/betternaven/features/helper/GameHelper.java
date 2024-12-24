@@ -1,18 +1,14 @@
 package cn.peyriat.betternaven.features.helper;
 
-import cn.peyriat.betternaven.Betternaven;
+import cn.peyriat.betternaven.BetterNaven;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.components.ChatComponent;
-import net.minecraft.core.Direction;
 import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FallingBlock;
-import net.minecraft.world.level.block.state.BlockState;
 import org.apache.logging.log4j.Logger;
 import net.minecraft.core.BlockPos;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +26,7 @@ public class GameHelper {
     public static final TextComponent PREFIX = new TextComponent("&7[&dBN&7]&r ");
     public static HashSet<String> friends = new HashSet<>();
     public static HashSet<String> enemies = new HashSet<>();
-    public static final Logger log = Betternaven.LOGGER;
+    public static final Logger log = BetterNaven.LOGGER;
 
     public static boolean randomizeBoolean() {
         return Math.random() >= 0.5;

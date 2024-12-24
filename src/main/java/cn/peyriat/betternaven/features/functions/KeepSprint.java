@@ -4,9 +4,11 @@ import cn.peyriat.betternaven.features.Module;
 import cn.peyriat.betternaven.features.helper.GameHelper;
 import net.minecraft.client.Minecraft;
 
-public class Keepsprint extends Module {
-    public Keepsprint(String name,int key) {
-        super(name,key);
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_K;
+
+public class KeepSprint extends Module {
+    public KeepSprint() {
+        super("KeepSprint", GLFW_KEY_K);
     }
 
     @Override

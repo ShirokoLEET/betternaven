@@ -17,7 +17,9 @@ plugins {
 
 apply plugin: 'org.spongepowered.mixin'
 
-
+mod_version = "0.0.1"
+mod_group_id = 'cn.peyriat.betternaven"'
+mod_authors = 'Peyriat & Potion1337'
 
 group = mod_group_id
 version = mod_version

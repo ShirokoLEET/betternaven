@@ -5,47 +5,55 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraftforge.common.MinecraftForge;
 
 public class Module {
+    private final String name;
+    private int key;
+    private boolean isEnabled = false;
 
-    public final String name;
-    public int key;
-    public boolean isEnabled = false;
-
-    public Module(String name, int key) {
+    public Module(final String name, final int key) {
         this.name = name;
         this.key = key;
     }
 
-    public void disabled() throws Exception {
-        MinecraftForge.EVENT_BUS.unregister(this);
+    public int getKey() {
+        return key;
     }
 
-    public void update() throws Exception {
+    public String getName() {
+        return name;
     }
 
-    public void render(PoseStack matrixStack) throws Exception {
+    public void setKey(int key) {
+        this.key = key;
     }
 
-    public void keyInput(int key) throws Exception {
+    public void onEnable() {}
+
+    public void onDisable() {}
+
+    public boolean isEnabled() {
+        return isEnabled;
     }
 
-    public void enabled() throws Exception {
-        MinecraftForge.EVENT_BUS.register(this);
-    }
+    public void update() {}
 
-    public void set(boolean enabled) throws Exception {
+    public void render(PoseStack matrixStack) {}
+
+    public void keyInput(int key) {}
+
+    public void set(boolean enabled) {
         this.isEnabled = enabled;
         if (enabled) {
             ConfigHelper.setConfig(this.name, true);
-            enabled();
-
+            onEnable();
+            MinecraftForge.EVENT_BUS.register(this);
         } else {
             ConfigHelper.setConfig(this.name, false);
-            disabled();
-
+            onDisable();
+            MinecraftForge.EVENT_BUS.unregister(this);
         }
     }
 
-    public void toggle() throws Exception {
+    public void toggle() {
         this.set(!this.isEnabled);
     }
 }
