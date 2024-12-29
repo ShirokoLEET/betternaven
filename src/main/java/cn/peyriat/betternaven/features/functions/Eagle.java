@@ -7,6 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.AirBlock;
+import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -29,7 +30,6 @@ public class Eagle extends Module {
     private static final boolean backwards = true;
     private static final double edgeDistance = 0.3;
     private static final Minecraft mc = Minecraft.getInstance();
-    // Example value, replace with actual value
 
     @SubscribeEvent
     public void handleMovementInput(MovementInputUpdateEvent event) {
@@ -54,6 +54,7 @@ public class Eagle extends Module {
     public void onDisable() {
         Minecraft.getInstance().options.keyShift.setDown(false);
     }
+
 
     @SubscribeEvent
     public boolean shouldSneak(MovementInputUpdateEvent event) {
@@ -89,5 +90,6 @@ public class Eagle extends Module {
         }
         return true;
     }
+
 
 }

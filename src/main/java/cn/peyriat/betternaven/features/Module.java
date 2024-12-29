@@ -4,6 +4,8 @@ import cn.peyriat.betternaven.features.helper.ConfigHelper;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraftforge.common.MinecraftForge;
 
+import java.awt.*;
+
 public class Module {
     private final String name;
     private int key;
@@ -56,4 +58,13 @@ public class Module {
     public void toggle() {
         this.set(!this.isEnabled);
     }
+
+    public String getStateString(Class<? extends Module> clazz) {
+        return ModuleManager.getModule(clazz).isEnabled() ? "ON" : "OFF";
+    }
+
+    public int getStateColor(Class<? extends Module> clazz) {
+        return (ModuleManager.getModule(clazz).isEnabled() ? Color.GREEN : Color.RED).hashCode();
+    }
+
 }

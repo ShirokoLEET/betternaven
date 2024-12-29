@@ -28,16 +28,10 @@ public class HUD extends Module {
         mc.font.draw(matrixStack, "Eagle: " + getStateString(Eagle.class), 0, 12, getStateColor(Eagle.class));
         mc.font.draw(matrixStack, "HealthFix: " + getStateString(HealthFix.class), 0, 22, getStateColor(HealthFix.class));
         mc.font.draw(matrixStack, "Velocity: " + getStateString(Velocity.class), 0, 32, getStateColor(Velocity.class));
-        mc.font.draw(matrixStack, "Player Rot:" + mc.player.getYRot() + ", " + mc.player.getXRot(), 0, 42, Color.WHITE.getRGB());
+        mc.font.draw(matrixStack, "Player Rot:" + mc.player.getYRot() % 360 + ", " + mc.player.getXRot(), 0, 42, Color.WHITE.getRGB());
         final boolean isAirBlock = Eagle.isAirBlockBelow();// mc.level.getBlockState(mc.player.blockPosition().below()).getBlock() instanceof AirBlock;
         mc.font.draw(matrixStack, isAirBlock ? "Close to edge" : "Not close to edge", 0, 52, isAirBlock ? Color.RED.getRGB() : Color.GREEN.getRGB());
     }
 
-    public String getStateString(Class<? extends Module> clazz) {
-        return ModuleManager.getModule(clazz).isEnabled() ? "ON" : "OFF";
-    }
 
-    public int getStateColor(Class<? extends Module> clazz) {
-        return (ModuleManager.getModule(clazz).isEnabled() ? Color.GREEN : Color.RED).hashCode();
-    }
 }

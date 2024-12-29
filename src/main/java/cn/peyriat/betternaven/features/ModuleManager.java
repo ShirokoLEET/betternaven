@@ -6,6 +6,8 @@ import cn.peyriat.betternaven.features.functions.Velocity;
 import cn.peyriat.betternaven.features.functions.HealthFix;
 import com.google.common.collect.Lists;
 import org.lwjgl.glfw.GLFW;
+
+import java.awt.*;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,4 +36,6 @@ public class ModuleManager {
     public static List<Module> getModules() {
         return modules;
     }
+
+
 }
